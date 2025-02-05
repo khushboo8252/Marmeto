@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cart Page</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="styles.css" rel="stylesheet"/>
+    
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img alt="Logo" src="https://s3-alpha-sig.figma.com/img/2727/769b/a74736d502746301ed573ed8940fc322?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OJvEBQx8ME39MkTmQliRdw~HZqd~-x6T94e~femNDpx9EOfjyOH8FMWzvDtARS8YxA2-9A4Lg54ygIdByoRV41YiCP9vqZvjIrJG3ytY1HT~w~ji3f1-Zc2Hl8WZ4bsdy6ZELlVNHMj1--ZC1BgYQQ~pWYXVWDC3i1o10JJkT-taH3xx3fONGcJq3eGIQdg3NRCSCf84MyJvuWunVtVc0-LPauDYRsFg99-qII9yvduvMOP9av0k1s-Em9IB3lUmAsEgqytHLL9oReUS~rxD~4nB0zVt1rN1rjuFI0FOC2YtegMkHgGItaehqfyb3cE~451Aff9OS-QpCfHVvqXexA__"/>
+                <span class="logo-text">Marmeto</span>
+            </div>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="mobile-menu hidden">
+        <div class="mobile-nav">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img alt="Banner Image" class="banner-image" src="https://storage.googleapis.com/a1aa/image/T_Gc-Ne6vSf8qsGDk7S2FzcJLzPh1Fc3PMG-mjrt1mI.jpg"/>
+        <div class="banner-overlay">
+            <img alt="Logo" class="banner-logo" src="https://s3-alpha-sig.figma.com/img/2727/769b/a74736d502746301ed573ed8940fc322?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OJvEBQx8ME39MkTmQliRdw~HZqd~-x6T94e~femNDpx9EOfjyOH8FMWzvDtARS8YxA2-9A4Lg54ygIdByoRV41YiCP9vqZvjIrJG3ytY1HT~w~ji3f1-Zc2Hl8WZ4bsdy6ZELlVNHMj1--ZC1BgYQQ~pWYXVWDC3i1o10JJkT-taH3xx3fONGcJq3eGIQdg3NRCSCf84MyJvuWunVtVc0-LPauDYRsFg99-qII9yvduvMOP9av0k1s-Em9IB3lUmAsEgqytHLL9oReUS~rxD~4nB0zVt1rN1rjuFI0FOC2YtegMkHgGItaehqfyb3cE~451Aff9OS-QpCfHVvqXexA__"/>
+            <h1 class="banner-title">Cart</h1>
+            <nav class="banner-nav">
+                <a class="hover-underline" href="#">Home</a>
+                &gt;
+                <span>Cart</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="container cart-section">
+        <!-- Cart Items -->
+        <div class="cart-items">
+            <table class="cart-table">
+                <thead>
+                    <tr class="cart-header">
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-item">
+                        <td class="cart-product">
+                            <img alt="Asgaard sofa" class="product-image" src="https://cdn.shopify.com/s/files/1/0883/2188/4479/files/Asgaardsofa3.png?v=1728384481"/>
+                            <span>Asgaard sofa</span>
+                        </td>
+                        <td>Rs. 250,000.00</td>
+                        <td>
+                            <input class="quantity-input" type="number" value="1" id="quantity"/>
+                        </td>
+                        <td>Rs. 250,000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cart Totals -->
+        <div class="cart-totals">
+            <h2>Cart Totals</h2>
+            <div class="total-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">Rs. 250,000.00</span>
+            </div>
+            <div class="total-row">
+                <span class="font-bold">Total</span>
+                <span class="font-bold text-yellow-500" id="cart-total">Rs. 250,000.00</span>
+            </div>
+            <button class="checkout-button" onclick="checkout()">Check Out</button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="container features-container">
+            <div class="feature">
+                <div class="icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                
+                <div>
+                    <h3>High Quality</h3>
+                    <p>crafted from top materials</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                
+                <div>
+                    <h3>Warranty Protection</h3>
+                    <p>Over 2 years</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+               
+                <div>
+                    <h3>Free Shipping</h3>
+                    <p>Order over Rs. 1000</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <i class='fas fa-headset'></i>
+                </div>
+                
+                <div>
+                    <h3>24 / 7 Support</h3>
+                    <p>Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
